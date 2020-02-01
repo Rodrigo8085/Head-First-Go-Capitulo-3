@@ -2,22 +2,21 @@ package main
 
 import (
 	"fmt"
-	"log"
 )
 
 func main() {
-	var cantidad, total float64
-	cantidad, err := pintar(4.3, 3.0)
+	var total float64
+	cantidad, err := pintar(4.3, -3.0)
 	//validacion si es que hay un error
 	if err != nil {
 		//no se puede imprimir en errores con printf.... con el log termina el proceso e imrime el error
-		log.Fatal(err)
+		fmt.Println(err)
 	} else {
 		fmt.Printf("%0.2f litros son los que se necesitan\n", cantidad)
 		total += cantidad
 		cantidad, err = pintar(5.3, 3.5)
 		if err != nil {
-			log.Fatal(err)
+			fmt.Println(err)
 		} else {
 			fmt.Printf("%0.2f litros son los que se necesitan\n", cantidad)
 			total += cantidad
